@@ -40,8 +40,11 @@ Before you begin, ensure you have the following installed:
 ### Installation
 **Installing dependencies**
 Clone the repository and then install dependencies with:
-``` cd /your-directory/ytt-api ```
-``` npm install ```
+```Javascript
+cd /your-directory/ytt-api 
+npm install 
+```
+
 
 **Configure environment variables**
 Create a .env file in the project root and set your variables.
