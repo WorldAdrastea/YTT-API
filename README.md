@@ -38,7 +38,7 @@ Before you begin, ensure you have the following installed:
 - [MongoDB](https://www.mongodb.com/) (Ensure MongoDB is running on your machine or provide a connection string)
 
 ### Installation
-**Installing dependencies**
+**Installing dependencies:**
 Clone the repository and then install dependencies with:
 ```
 cd /your-directory/ytt-api 
@@ -46,10 +46,10 @@ npm install
 ```
 
 
-**Configure environment variables**
+**Configure environment variables:**
 Create a .env file in the project root and set your variables.
 
-**Start the application**
+**Start the application:**
 ```npm start```
 The API should be running on 'http://localhost:8080' by default but you can change this accordingly within the src/index.ts file
 
