@@ -21,7 +21,7 @@ export const deleteUser = async (req: express.Request, res: express.Response) =>
 
         return res.json(deletedUser);
     } catch (error) {
-        console.log(error)
+        console.log(error);
         res.sendStatus(400);
     }
 }

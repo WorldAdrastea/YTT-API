@@ -6,7 +6,7 @@ import compression from 'compression';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import router from './router';
+import router from './router/router';
 
 dotenv.config();
 
@@ -16,6 +16,7 @@ app.use(cors({
     credentials: true,
 }));
 
+//Middlewares
 app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -26,6 +27,7 @@ server.listen(8080, () => {
     console.log('Server running on http://localhost:8080');
 });
 
+//MongoDB Connection
 mongoose.Promise = Promise;
 mongoose.connect(process.env.MONGO_URL);
 mongoose.connection.on('error', (error: Error) => console.log(error))
