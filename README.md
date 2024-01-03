@@ -40,7 +40,7 @@ Before you begin, ensure you have the following installed:
 ### Installation
 **Installing dependencies**
 Clone the repository and then install dependencies with:
-```Javascript
+```
 cd /your-directory/ytt-api 
 npm install 
 ```
