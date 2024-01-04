@@ -1,10 +1,10 @@
 {
     "compilerOptions": {
         "module": "CommonJS",
-        "moduleResolution": "Node",
+        "moduleResolution": "NodeNext",
         "baseUrl": "src",
         "outDir": "dist",
-        "types": ["node"],
+        "types": ["node", "express"],
         "typeRoots": ["node_modules/@types"],
         "sourceMap": true,
         "noImplicitAny": true, 
