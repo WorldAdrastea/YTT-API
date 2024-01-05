@@ -4,9 +4,7 @@
         "moduleResolution": "Node",
         "baseUrl": "src",
         "outDir": "dist",
-        "types": [
-            "node"
-        ],
+        "types": [],
         "typeRoots": ["node_modules/@types"],
         "sourceMap": true,
         "noImplicitAny": true,
