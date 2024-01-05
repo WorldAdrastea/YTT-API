@@ -21,6 +21,8 @@ app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.json());
 
+app.use('/', router);
+
 const server = http.createServer(app);
 
 server.listen(8080, () => {
@@ -31,5 +33,3 @@ server.listen(8080, () => {
 mongoose.Promise = Promise;
 mongoose.connect(process.env.MONGO_URL);
 mongoose.connection.on('error', (error: Error) => console.log(error))
-
-app.use('/', router());
