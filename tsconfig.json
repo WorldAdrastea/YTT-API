@@ -4,7 +4,9 @@
         "moduleResolution": "NodeNext",
         "baseUrl": "src",
         "outDir": "dist",
-        "types": ["@types/node"],
+        "types": [
+            "node"
+        ],
         "typeRoots": ["node_modules/@types"],
         "sourceMap": true,
         "noImplicitAny": true, 
