@@ -6,8 +6,6 @@
         "outDir": "./dist",
         "types": ["node"],
         "typeRoots": [
-            "./node_modules/@types",
-            "./node_modules/@types/node",
             "node_modules/@types",
         ],
         "sourceMap": true,
@@ -15,4 +13,5 @@
         "esModuleInterop": true,
     },
     "include": ["src/**/*"],
+    "exclude": ["node_modules"]
 }
