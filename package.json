@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "build": "npm install && tsc",
     "build:watch": "tsc --watch",
     "watch": "nodemon './dist/index.js' --watch './dist'"
   },
@@ -21,6 +21,7 @@
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
     "@types/lodash": "^4.14.202",
+    "@types/node": "^20.10.6",
     "body-parser": "^1.20.2",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
@@ -32,8 +33,5 @@
     "nodemon": "^3.0.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
-  },
-  "devDependencies": {
-    "@types/node": "^20.10.6"
   }
 }
