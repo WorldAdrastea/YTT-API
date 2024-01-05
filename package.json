@@ -1,7 +1,7 @@
 {
   "name": "ytt-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "YTT API",
   "main": "index.js",
   "scripts": {
     "start": "nodemon",
