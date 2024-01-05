@@ -4,10 +4,8 @@
         "moduleResolution": "NodeNext",
         "baseUrl": "src",
         "outDir": "./dist",
-        "types": [],
-        "typeRoots": [
-            "node_modules/@types",
-        ],
+        "typeRoots": ["./node_modules/@types", "./src/types"],
+        "types": ["node", "express", "mongoose", "lodash"],
         "sourceMap": true,
         "noImplicitAny": true,
         "esModuleInterop": false,
