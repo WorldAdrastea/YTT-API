@@ -4,10 +4,10 @@
         "moduleResolution": "NodeNext",
         "baseUrl": "src",
         "outDir": "dist",
+        "types": ["node"],
+        "typeRoots": ["node_modules/@types"],
         "sourceMap": true,
-        "noImplicitAny": true,
-        "esModuleInterop": false,
-        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": true, 
     },
     "include": ["src/**/*"],
 }
