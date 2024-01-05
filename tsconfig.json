@@ -10,6 +10,7 @@
         "noImplicitAny": true,
         "esModuleInterop": false,
         "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true
     },
     "include": ["src/**/*"],
 }
