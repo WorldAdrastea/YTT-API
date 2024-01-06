@@ -4,10 +4,10 @@
         "moduleResolution": "NodeNext",
         "baseUrl": "src",
         "outDir": "dist",
-        "types": ["node"],
+        "types": ["node", "express", "lodash"],
         "typeRoots": ["node_modules/@types"],
         "sourceMap": true,
-        "noImplicitAny": true, 
+        "noImplicitAny": true,
     },
     "include": ["src/**/*"],
 }

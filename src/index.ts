@@ -21,8 +21,6 @@ app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.json());
 
-app.use('/', router);
-
 const server = http.createServer(app);
 
 server.listen(8080, () => {
@@ -31,8 +29,21 @@ server.listen(8080, () => {
 
 //MongoDB Connection
 mongoose.Promise = Promise;
-mongoose.connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-} as ConnectOptions);
+mongoose.connect(process.env.MONGO_URL);
+// async function connectToDatabase() {
+//     try {
+//         await mongoose.connect(process.env.MONGO_URL, {
+//             useNewUrlParser: true,
+//             useUnifiedTopology: true,
+//         } as ConnectOptions);
+//         console.log('Connected to MongoDB');
+//     } catch (error) {
+//     console.error('MongoDB connection error:', error);
+//     }
+// }
+  
+// connectToDatabase();
+
 mongoose.connection.on('error', (error: Error) => console.log(error))
+
+app.use('/', router);
