@@ -1,10 +1,9 @@
 import express from 'express';
-import http from 'http';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
-import mongoose, { ConnectOptions } from 'mongoose';
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import router from './router/router';
 
@@ -12,38 +11,46 @@ dotenv.config();
 
 const app = express();
 
+app.use(express.json())
+
+//Middlewares
+app.use(cookieParser());
+app.use(compression());
+app.use(bodyParser.json());
 app.use(cors({
     credentials: true,
 }));
 
-//Middlewares
-app.use(compression());
-app.use(cookieParser());
-app.use(bodyParser.json());
 
-const server = http.createServer(app);
+const port = 8080
 
-server.listen(8080, () => {
-    console.log('Server running on http://localhost:8080');
-});
+app.get('/', (req: express.Request, res: express.Response) => {  
+  res.send('Hello from Express!')
+})
+
+app.listen(port, () => {  
+  console.log(`server is listening on ${port}`)
+})
+
+app.use('/', router());
 
 //MongoDB Connection
 mongoose.Promise = Promise;
-mongoose.connect(process.env.MONGO_URL);
-// async function connectToDatabase() {
-//     try {
-//         await mongoose.connect(process.env.MONGO_URL, {
-//             useNewUrlParser: true,
-//             useUnifiedTopology: true,
-//         } as ConnectOptions);
-//         console.log('Connected to MongoDB');
-//     } catch (error) {
-//     console.error('MongoDB connection error:', error);
-//     }
-// }
+
+// mongoose.connect(process.env.MONGO_URL);
+
+async function connectToDatabase() {
+    try {
+        await mongoose.connect(process.env.MONGO_URL);
+        console.log('Connected to MongoDB');
+    } catch (error) {
+    console.error('MongoDB connection error:', error);
+    }
+}
   
-// connectToDatabase();
+connectToDatabase();
 
 mongoose.connection.on('error', (error: Error) => console.log(error))
 
-app.use('/', router);
+
+
