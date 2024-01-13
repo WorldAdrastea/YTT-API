@@ -17,8 +17,23 @@ app.use(express.json())
 app.use(cookieParser());
 app.use(compression());
 app.use(bodyParser.json());
-app.use(cors({
+let allowedOrigins = [
+  "http://localhost:3000",
+
+]
+
+app.use(
+  cors({
     credentials: true,
+    origin: (origin: any, callback: any) => {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) === -1) {
+        let message = "The CORS policy for this application doesn't allo access from origin" + origin;
+        return callback(new Error(message), false);
+      }
+      return callback(null, true)
+    }
+    
 }));
 
 
