@@ -4,7 +4,7 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-latest-green?logo=mongodb)](https://www.mongodb.com/)
 
 # YTT API
-YTT API is a Node.js, Express, TypeScript, and MongoDB-powered API that allows users to create accounts, log in, explore different YTT (Your Talent Tube) covers, and upload their own covers with options to delete and update them.
+YTT API is a Node.js, Express, TypeScript, and MongoDB-powered API that allows users to create accounts, log in, explore different YTT (Youtaite) covers, and upload their own covers with options to delete and update them.
 
 ## Table of Contents
 - [Features](#features)
