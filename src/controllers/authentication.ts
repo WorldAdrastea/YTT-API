@@ -27,7 +27,7 @@ export const login = async (req: express.Request, res: express.Response) => {
 
         await user.save();
 
-        res.cookie('YTT_AUTH', user.authentication.sessionToken, { domain: 'https://ytt-api.onrender.com', path: '/', secure: true });
+        res.cookie('YTT_AUTH', user.authentication.sessionToken, { domain: 'localhost', path: '/', secure: true });
         
         return res.status(200).json(user).end();
     } catch (error) {
