@@ -6,6 +6,8 @@
 # YTT API
 YTT API is a Node.js, Express, TypeScript, and MongoDB-powered API that allows users to create accounts, log in, explore different YTT (Youtaite) covers, and upload their own covers with options to delete and update them.
 
+The API has been deployed on Render: https://ytt-api.onrender.com
+
 ## Table of Contents
 - [Features](#features)
 - [Getting Started](#getting-started)
