@@ -1,5 +1,5 @@
 import express from "express";
-
+import { UploadedFile} from "express-fileupload";
 import { get } from 'lodash'
 import { deleteUploadsById, getUploads, getUploadsById, updateUploadsById, UploadsModel } from "../YTT_db/uploads";
 
@@ -7,7 +7,12 @@ export const getAllUploads = async (req: express.Request, res: express.Response)
     try {
         const uploads = await getUploads();
 
-        return res.status(200).json(uploads);
+        const uploadsWithVideoPath = uploads.map(upload => ({
+            ...upload.toObject(),
+            videoPath: `${upload._id}`,
+        }));
+
+        return res.status(200).json(uploadsWithVideoPath);
     } catch (error) {
         console.log(error);
         return res.sendStatus(400);
@@ -20,8 +25,20 @@ export const createUpload = async (req: express.Request, res: express.Response) 
         const currentUserId = get(req, 'identity._id') as string;
 
         if (!title || !description || !coveredBy || !originallyBy) {
-            return res.status(403).send('Missing title, description, covered by or orginally by.')
+            return res.status(403).send('Missing title, description, covered by or originally by.')
         }
+
+        const file = (req.files && req.files.file as UploadedFile)
+        if (!file) {
+            return res.status(403).send('No file provided');
+        }
+
+        if (file.mimetype !== 'video/mp4') {
+            return res.status(403).send('Only MP4 files are allowed');
+        }
+
+        const fileContent = file.data!
+        const filePath = `${Date.now()}_${file.name}`;
 
         const newUpload = await UploadsModel.create({
             title,
@@ -29,7 +46,10 @@ export const createUpload = async (req: express.Request, res: express.Response) 
             uploadedBy: currentUserId,
             coveredBy,
             originallyBy,
-        });
+            file: fileContent,
+            filePath,
+            },
+        );
 
         return res.status(201).json(newUpload);
     } catch (error) {
