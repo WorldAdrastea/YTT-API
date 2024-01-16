@@ -7,6 +7,9 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import router from './router/router';
 
+//For displaying the HTML - Check Line 46
+const path = require("path");
+
 dotenv.config();
 
 const app = express();
@@ -40,7 +43,7 @@ app.use(
 const port = 8080
 
 app.get('/', (req: express.Request, res: express.Response) => {  
-  res.send('Hello from Express!')
+  res.sendFile(path.join(__dirname, 'index.html'));
 })
 
 app.listen(port, () => {  

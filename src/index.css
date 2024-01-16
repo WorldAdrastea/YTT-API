@@ -1,0 +1,38 @@
+* {
+    font-family: 'Kanit', sans-serif;
+}
+
+.top-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.top-container::before {
+    /* Maybe add image at some point */
+    background-image: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px 350px auto;
+    text-align: center;
+    height: 98vh;
+}
+
+.grid-item {
+    border: 1px solid rgba(1, 1, 1, 1);
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.grid-description {
+    font-size: 15px;
+}

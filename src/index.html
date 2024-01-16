@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/icon" href="./assets/favicon.ico" sizes="32x32">
+        <link rel="stylesheet" href="./index.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+        <title>Youtaite API</title>
+    </head>
+    <body>
+        <main>
+            <div class="top-container">
+                <div>
+                    <h1>Youtaite API</h1>
+                </div>
+                <div>
+                    Welcome to the YTT API, this page will show the routes and queries for the CRUD API and give directions on how to use the API.
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item">
+                    Endpoint:
+                </div>
+                <div class="grid-item">
+                    Request Method:
+                </div>
+                <div class="grid-item">
+                    What does it do?
+                </div>
+                <div class="grid-item">
+                    /auth/login
+                </div>
+                <div class="grid-item">
+                    POST
+                </div>
+                <div class="grid-item grid-description">
+                    Allows a user to log in with email and password
+                </div>
+                <div class="grid-item">
+                    /auth/register
+                </div>
+                <div class="grid-item">
+                    POST
+                </div>
+                <div class="grid-item grid-description">
+                    Allows for registration with the account requiring a username, email and password
+                </div>
+                <div class="grid-item">
+                    /users
+                </div>
+                <div class="grid-item">
+                    GET
+                </div>
+                <div class="grid-item grid-description">
+                    Returns all existing users
+                </div>
+                <div class="grid-item">
+                    /users/:id
+                </div>
+                <div class="grid-item">
+                    DELETE
+                </div>
+                <div class="grid-item grid-description">
+                    Allows a user to delete their account, only if the users' id matches the account their own account (to prevent other people deleting other people's accounts)
+                </div>
+                <div class="grid-item">
+                    /users/:id
+                </div>
+                <div class="grid-item">
+                    PATCH
+                </div>
+                <div class="grid-item grid-description">
+                    Allows a user to update their information such as username, email or password
+                </div>
+                <div class="grid-item">
+                    /uploads
+                </div>
+                <div class="grid-item">
+                    GET
+                </div>
+                <div class="grid-item grid-description">
+                    Returns all uploads
+                </div>
+                <div class="grid-item">
+                    /uploads
+                </div>
+                <div class="grid-item">
+                    POST
+                </div>
+                <div class="grid-item grid-description">
+                    Allows a user to post an upload which requires a title, who the cover is covered by and original artists of the song
+                </div>
+                <div class="grid-item">
+                    /uploads/:id
+                </div>
+                <div class="grid-item">
+                    DELETE
+                </div>
+                <div class="grid-item grid-description">
+                    Allows a user to delete their own upload
+                </div>
+                <div class="grid-item">
+                    /uploads/:id
+                </div>
+                <div class="grid-item">
+                    PATCH
+                </div>
+                <div class="grid-item grid-description">
+                    Allows a user to update their own cover information
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
