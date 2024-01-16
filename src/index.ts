@@ -7,7 +7,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import router from './router/router';
 
-//For displaying the HTML - Check Line 46
+//For displaying the HTML - Check Line 42 and 47
 const path = require("path");
 
 dotenv.config();
@@ -39,12 +39,13 @@ app.use(
     
 }));
 
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 const port = 8080
 
-app.get('/', (req: express.Request, res: express.Response) => {  
-  res.sendFile(path.join(__dirname, 'index.html'));
-})
+app.get('/', (req: express.Request, res: express.Response) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+});
 
 app.listen(port, () => {  
   console.log(`server is listening on ${port}`)
