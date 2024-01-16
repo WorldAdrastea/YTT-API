@@ -6,6 +6,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import router from './router/router';
+import fileUpload from 'express-fileupload';
 
 //For displaying the HTML - Check Line 42 and 47
 const path = require("path");
@@ -17,6 +18,7 @@ const app = express();
 app.use(express.json())
 
 //Middlewares
+app.use(fileUpload());
 app.use(cookieParser());
 app.use(compression());
 app.use(bodyParser.json());
